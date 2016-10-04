@@ -1,6 +1,9 @@
 package com.su.chi.falkorejokegenerator;
 
 import android.gesture.Prediction;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
 
 public class Jokes {
 
@@ -11,8 +14,22 @@ public class Jokes {
         puns = new String[] {
                 "The state of Minnesota is known for its adequately small quantities of cold beverages.",
                 "What do you call salmon covered in nutella? Salmonella.",
-                "How do you make a party in space? You planet."
-        };
+                "How do you make a party in space? You planet."};
+    }
+
+    public int nextInt(int Jokes) {
+        if (Jokes <= 0)
+            throw new IllegalArgumentException("n must be positive");
+
+        if ((Jokes & -Jokes) == Jokes)  // i.e., n is a power of 2
+            return (int)((Jokes * (long)nextInt(31)) >> 31);
+
+        int bits, val;
+        do {
+            bits = nextInt(31);
+            val = bits % Jokes;
+        } while (bits - val + (Jokes-1) < 0);
+        return val;
     }
 
     public static Jokes get() {
@@ -79,3 +96,6 @@ public class Jokes {
 // The bartender then gives the scientists two beers.
 
 // What do you call a sleepwalking nun? A roamin' catholic.
+
+// Miguel Banuelos is a joke.
+

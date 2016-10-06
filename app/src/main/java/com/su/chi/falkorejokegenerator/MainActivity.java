@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.media.MediaPlayer;
+import android.content.pm.ActivityInfo;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             acceleration = acceleration * 0.9f + delta;
 
             if (acceleration > 15) {
+                MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.wow);
+                mediaPlayer.start();
+
+                String falkore = Jokes.getPuns().getJokes();
+
+                answerText.setText(falkore);
+
                 Toast toast = Toast.makeText(getApplication(), "Device has shaken.", Toast.LENGTH_SHORT);
                 toast.show();
             }
@@ -59,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         previousAcceleration = SensorManager.GRAVITY_EARTH;
 
         answerText = (TextView) findViewById(R.id.answerText);
-        answerText.setText(Jokes.get().getJokes());
+
+        answerText.setText(Jokes.getPuns().getJokes());
 
     }
 

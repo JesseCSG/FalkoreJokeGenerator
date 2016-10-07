@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             float delta = currentAcceleration - previousAcceleration;
             acceleration = acceleration * 0.9f + delta;
 
-            if (acceleration > 15) {
+            if (acceleration > 11) {
                 MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.wow);
                 mediaPlayer.start();
 

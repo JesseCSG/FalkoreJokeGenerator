@@ -36,7 +36,12 @@ public class Jokes {
                 "How do you make a party in space? You planet.",
                 "What did oxygen say to it's date with potassium? OK",
                 "What do you call a Pokemon that goes invisible? Gengone.",
-                "A man tried to make his friend laugh with 10 puns. No pun in ten did."};
+                "A man tried to make his friend laugh with 10 puns. No pun in ten did.",
+                "What's a duck favorite drug? Quack.",
+                "What do you call a pig that does karate? Porkchop.",
+                "What do you call a chicken that does karate? Ka-Pow-Chicken.",
+                "Why does Snoop Dog have an umbrella all the time? For Drizzle."
+        };
 
 
     }
